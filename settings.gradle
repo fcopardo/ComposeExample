@@ -1,0 +1,5 @@
+rootProject.name = "composeHello"
+include ':app'
+include ':ux'
+include ':composeUI'
+include ':viewUI'
