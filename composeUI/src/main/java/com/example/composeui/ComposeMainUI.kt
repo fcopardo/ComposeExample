@@ -47,7 +47,7 @@ class ComposeMainUI : MainUI() {
                             composeUI("HELLO VIEW")
                         }
                     }
-                }3
+                }
             }
         }
     }
