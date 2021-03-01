@@ -39,7 +39,7 @@ open class ComposeMainUI : MainUI() {
                         show()
                     }
                 }) {
-                    composeUI("Hello View")
+                    composeUI("Hello View", visible)
                 }
             }
         }
@@ -57,7 +57,7 @@ open class ComposeMainUI : MainUI() {
 
     @Composable
     @Preview("Light Theme", widthDp = 360, heightDp = 640)
-    fun composeUI(text : String = "default"){
+    fun composeUI(text : String = "default", visibility : Boolean = true){
         Column(
                 modifier = Modifier
                         .fillMaxWidth()
@@ -65,7 +65,7 @@ open class ComposeMainUI : MainUI() {
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            if (visible) {
+            if (visibility) {
                 title(text)
             }
         }
