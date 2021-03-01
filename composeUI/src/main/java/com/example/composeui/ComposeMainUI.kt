@@ -1,4 +1,3 @@
-compose challenge
 package com.example.composeui
 
 import androidx.activity.ComponentActivity
@@ -11,10 +10,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.gesture.tapGestureFilter
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.unit.dp
+import androidx.ui.tooling.preview.Preview
 import com.example.composeui.theme.*
 import com.example.ux.MainUI
 
-class ComposeMainUI : MainUI() {
+open class ComposeMainUI : MainUI() {
 
     private val DarkColors = darkColors(
         primary = purple200,
@@ -39,15 +39,7 @@ class ComposeMainUI : MainUI() {
                         show()
                     }
                 }) {
-                    Column(
-                        modifier = Modifier.fillMaxWidth().fillMaxHeight(),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        if (visible) {
-                            composeUI("HELLO VIEW")
-                        }
-                    }
+                    composeUI("Hello View")
                 }
             }
         }
@@ -64,10 +56,27 @@ class ComposeMainUI : MainUI() {
     }
 
     @Composable
-    protected fun composeUI(text : String){
+    @Preview("Light Theme", widthDp = 360, heightDp = 640)
+    fun composeUI(text : String = "default"){
+        Column(
+                modifier = Modifier
+                        .fillMaxWidth()
+                        .fillMaxHeight(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            if (visible) {
+                title(text)
+            }
+        }
+    }
+
+    @Composable
+    @Preview("Light Theme", widthDp = 360, heightDp = 640)
+    fun title(text : String = "default"){
         Text(text = text,
-            modifier = Modifier.padding(12.dp),
-            style = MaterialTheme.typography.body1)
+                modifier = Modifier.padding(12.dp),
+                style = MaterialTheme.typography.body1)
     }
 
     @Composable
