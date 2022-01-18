@@ -12,8 +12,8 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ui = ComposeMainUI()
-        //ui = ViewMainUi()
-        ui.setContent(this)
+        //ui = ComposeMainUI()
+        ui = ViewMainUi()
+        ui.setContents(this)
     }
 }

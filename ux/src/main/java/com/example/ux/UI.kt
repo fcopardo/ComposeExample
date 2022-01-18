@@ -4,10 +4,10 @@ package com.example.ux
 import android.app.Activity
 import android.content.Context
 
-open abstract class UI {
+abstract class UI {
     protected lateinit var activity : Activity
     protected var visible: Boolean = true
-    fun setContent(activity : Activity){
+    fun setContents(activity : Activity){
         this.activity = activity
         draw()
     }
